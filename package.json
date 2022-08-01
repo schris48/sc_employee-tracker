@@ -17,7 +17,9 @@
   },
   "homepage": "https://github.com/schris48/sc_employee-tracker#readme",
   "dependencies": {
+    "chalk": "^5.0.1",
     "console.table": "^0.10.0",
+    "figlet": "^1.5.2",
     "inquirer": "^9.0.2",
     "mysql2": "^2.3.3"
   }

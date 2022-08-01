@@ -1,0 +1,24 @@
+{
+  "name": "sc_employee-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/schris48/sc_employee-tracker.git"
+  },
+  "author": "schris48",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/schris48/sc_employee-tracker/issues"
+  },
+  "homepage": "https://github.com/schris48/sc_employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^9.0.2",
+    "mysql2": "^2.3.3"
+  }
+}

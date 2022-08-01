@@ -137,19 +137,15 @@ function primaryMenu() {
 
     function viewAllEmployeesByManager() {
 
-        // set manager array
         let managerArr = [];
 
-        // Create connection using promise-sql
         promisemysql.createConnection(connectionProperties)
             .then((conn) => {
 
-                // Query all employees
                 return conn.query("SELECT DISTINCT m.id, CONCAT(m.first_name, ' ', m.last_name) AS manager FROM employee e Inner JOIN employee m ON e.manager_id = m.id");
 
             }).then(function(managers){
 
-            // place all employees in array
             for (i=0; i < managers.length; i++){
                 managerArr.push(managers[i].manager);
             }
@@ -159,7 +155,6 @@ function primaryMenu() {
 
             inquirer.prompt({
 
-                // Prompt user of manager
                 name: "manager",
                 type: "list",
                 message: "Which manager would you like to search?",

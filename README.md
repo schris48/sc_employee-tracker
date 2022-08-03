@@ -6,18 +6,11 @@
   Track your employees!
 
   ## Table of Contents
-  - [Installation](#installation)
   - [Usage](#usage)
   - [License](#license)
   - [Credits](#credits)
   - [Tests](#tests)
   - [Questions](#questions)
-
-  ## Installation
-  1. Clone repository to local storage
-  2. Initialize and install npm
-  3. Install sequelize, inquier, figlet, chalk, and mysql2
-  4. Run npm start
 
   ## Usage
   For all your employee tracking needs.

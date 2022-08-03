@@ -16,7 +16,7 @@ connection.connect(err => {
     console.log(``);
     console.log(chalk.black.bold(figlet.textSync('Employee Tracker')));
     console.log(``);
-    console.log(`                                                                    ` + chalk.blue.bold('Created By: Priya Ravi'));
+    console.log(`                                                                    ` + pink.bold('Created By: Sharon Christensen'));
     console.log(``);
     console.log(chalk.pink.bold(`==============================================================================================`));    mainMenu();
 });
@@ -50,49 +50,49 @@ function primaryMenu() {
             switch (response.userAction) {
                 case "View all departments":
                     viewDepartments();
-                    break;
+                    return;
                 case "View all employees":
                     viewEmployees();
-                    break;
+                    return;
                 case "View all roles":
                     viewRoles();
-                    break;
+                    return;
                 case "View all employees by manager":
                     viewAllEmployeesByManager();
-                    break;
+                    return;
                 case "View all employees by department":
                     viewAllEmployeeByDepartment();
-                    break;
+                    return;
                 case "Add a department":
                     addDept();
-                    break;
+                    return;
                 case "Add a role":
                     addRole();
-                    break;
+                    return;
                 case "Add an employee":
                     addEmployee();
-                    break;
+                    return;
                 case "Update employee role":
                     updateEmployeeRole();
-                    break;
+                    return;
                 case "Update employee manager":
                     updateEmployeeManager();
-                    break;
+                    return;
                 case "Delete employee":
                     deleteEmployee();
-                    break;
+                    return;
                 case "Delete role":
                     deleteRole();
-                    break;
+                    return;
                 case "Delete department":
                     deleteDepartment();
-                    break;
+                    return;
                 case "View department budgets":
                     viewDeptBudget();
-                    break;
+                    return;
                 case "Exit":
                     connection.end();
-                    break;
+                    return;
             }
         });
 

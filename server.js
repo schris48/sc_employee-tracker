@@ -18,7 +18,7 @@ connection.connect(err => {
     console.log(``);
     console.log(`                                                                    ` + pink.bold('Created By: Sharon Christensen'));
     console.log(``);
-    console.log(chalk.pink.bold(`==============================================================================================`));    mainMenu();
+    console.log(chalk.pink.bold(`==============================================================================================`));    primaryMenu();
 });
 
 function primaryMenu() {

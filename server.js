@@ -16,7 +16,7 @@ connection.connect(err => {
     console.log(``);
     console.log(chalk.black.bold(figlet.textSync('Employee Tracker')));
     console.log(``);
-    console.log(`                                                                    ` + pink.bold('Created By: Sharon Christensen'));
+    console.log(`                                                                    ` + chalk.pink.bold('Created By: Sharon Christensen'));
     console.log(``);
     console.log(chalk.pink.bold(`==============================================================================================`));    primaryMenu();
 });

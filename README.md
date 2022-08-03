@@ -21,7 +21,7 @@
 
   ## Credits
   1. Ryan Harris, https://github.com/ryan-harris.
-  2. Priya MacPherson, https://github.com/pmac16.
+  2. Priya Ravi, https://github.com/priyaravi23.
 
   ## Tests
   N/A

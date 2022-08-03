@@ -20,8 +20,8 @@
   ![license](https://img.shields.io/badge/license-MIT-blueviolet.png)
 
   ## Credits
-  Ryan Harris, https://github.com/ryan-harris.
-  Priya MacPherson, https://github.com/pmac16.
+  1. Ryan Harris, https://github.com/ryan-harris.
+  2. Priya MacPherson, https://github.com/pmac16.
 
   ## Tests
   N/A

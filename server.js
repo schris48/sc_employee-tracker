@@ -61,10 +61,10 @@ function primaryMenu() {
                     viewAllEmployeesByManager();
                     return;
                 case "View all employees by department":
-                    viewAllEmployeeByDepartment();
+                    viewAllEmployeesByDepartment();
                     return;
                 case "Add a department":
-                    addDept();
+                    addDepartment();
                     return;
                 case "Add a role":
                     addRole();
@@ -88,7 +88,7 @@ function primaryMenu() {
                     deleteDepartment();
                     return;
                 case "View department budgets":
-                    viewDeptBudget();
+                    viewDepartmentBudget();
                     return;
                 case "Exit":
                     connection.end();
@@ -99,9 +99,9 @@ function primaryMenu() {
     function viewDepartments() {
         let query = "SELECT * FROM  departments";
         connection.query(query, function(err, res) {
-            console.log(chalk.yellow.bold(`====================================================================================`));
-            console.log(`                              ` + chalk.green.bold(`All Departments:`));
-            console.log(chalk.yellow.bold(`====================================================================================`));
+            console.log(chalk.pink.bold(`====================================================================================`));
+            console.log(`                              ` + chalk.black.bold(`All Departments:`));
+            console.log(chalk.pink.bold(`====================================================================================`));
 
             console.table(res);
             primaryMenu();
@@ -111,9 +111,9 @@ function primaryMenu() {
     function viewEmployees() {
         let query = "SELECT e.id, e.first_name, e.last_name, roles.title, departments.department_name AS department, roles.salary, concat(m.first_name, ' ' ,  m.last_name) AS manager FROM employee e LEFT JOIN employee m ON e.manager_id = m.id INNER JOIN roles ON e.role_id = roles.id INNER JOIN departments ON roles.department_id = departments.id ORDER BY id ASC";
         connection.query(query, function(err, res) {
-            console.log(chalk.yellow.bold(`====================================================================================`));
-            console.log(`                              ` + chalk.green.bold(`Current Employees:`));
-            console.log(chalk.yellow.bold(`====================================================================================`));
+            console.log(chalk.pink.bold(`====================================================================================`));
+            console.log(`                              ` + chalk.black.bold(`Current Employees:`));
+            console.log(chalk.pink.bold(`====================================================================================`));
 
             console.table(res);
             primaryMenu();
@@ -126,9 +126,9 @@ function primaryMenu() {
                   INNER JOIN departments ON roles.department_id = departments.id`;
 
         connection.query(query, function(err, res) {
-            console.log(chalk.yellow.bold(`====================================================================================`));
-            console.log(`                              ` + chalk.green.bold(`Current Employee Roles:`));
-            console.log(chalk.yellow.bold(`====================================================================================`));
+            console.log(chalk.pink.bold(`====================================================================================`));
+            console.log(`                              ` + chalk.black.bold(`Current Employee Roles:`));
+            console.log(chalk.pink.bold(`====================================================================================`));
 
             console.table(res);
             primaryMenu();
@@ -146,7 +146,7 @@ function primaryMenu() {
 
             }).then(function(managers){
 
-            for (i=0; i < managers.length; i++){
+            for (i = 0; i < managers.length; i++){
                 managerArr.push(managers[i].manager);
             }
 
@@ -165,7 +165,7 @@ function primaryMenu() {
                     let managerID;
 
                     // get ID of manager selected
-                    for (i=0; i < managers.length; i++){
+                    for (i = 0; i < managers.length; i++){
                         if (answer.manager == managers[i].manager){
                             managerID = managers[i].id;
                         }
@@ -184,9 +184,9 @@ function primaryMenu() {
 
                         // display results with console.table
                         console.log("\n");
-                        console.log(chalk.yellow.bold(`====================================================================================`));
-                        console.log(`                              ` + chalk.green.bold(`Employees by Manager:`));
-                        console.log(chalk.yellow.bold(`====================================================================================`));
+                        console.log(chalk.pink.bold(`====================================================================================`));
+                        console.log(`                              ` + chalk.black.bold(`Employees by Manager:`));
+                        console.log(chalk.pink.bold(`====================================================================================`));
 
                         console.table(res);
 
@@ -197,7 +197,7 @@ function primaryMenu() {
         });
     }
 
-    function viewAllEmpByDept() {
+    function viewAllEmployeesByDepartment() {
 
         // Set global array to store department names
         let deptArr = [];
@@ -248,16 +248,16 @@ function primaryMenu() {
         });
     }
 
-    function addDept() {
+    function addDepartment() {
         inquirer
             .prompt([
                 {
-                    name: "deptID",
+                    name: "departmentId",
                     type: "input",
                     message: "What is the ID of the new department?",
                 },
                 {
-                    name: "deptName",
+                    name: "departmentName",
                     type: "input",
                     message: "What is the name of the new department?",
                 }
@@ -281,12 +281,12 @@ function primaryMenu() {
         inquirer
             .prompt([
                 {
-                    name: "roleID",
+                    name: "roleId",
                     type: "input",
                     message: "What is the ID of the new role?",
                 },
                 {
-                    name: "roleTtile",
+                    name: "roleTile",
                     type: "input",
                     message: "What is the title of the new role?",
                 },
@@ -322,27 +322,27 @@ function primaryMenu() {
         inquirer
             .prompt([
                 {
-                    name: "employeeID",
+                    name: "employeeId",
                     type: "input",
                     message: "What is the ID of the new employee?",
                 },
                 {
-                    name: "empFirstName",
+                    name: "employeeFirstName",
                     type: "input",
                     message: "What is the first name of the new employee?",
                 },
                 {
-                    name: "empLastName",
+                    name: "employeeLastName",
                     type: "input",
                     message: "What is the last name of the new employee?",
                 },
                 {
-                    name: "empRole",
+                    name: "employeeRole",
                     type: "input",
                     message: "What is the role ID for the new employee?",
                 },
                 {
-                    name: "empManager",
+                    name: "employeeManager",
                     type: "input",
                     message: "What is id of the new employee's manager?",
                 }
@@ -702,7 +702,7 @@ function primaryMenu() {
     }
 
 
-    function viewDeptBudget() {
+    function viewDepartmentBudget() {
         console.log(chalk.yellow.bold(`====================================================================================`));
         console.log(`                              ` + chalk.green.bold(`Budget By Department:`));
         console.log(chalk.yellow.bold(`====================================================================================`));
